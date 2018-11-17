@@ -14,6 +14,9 @@
 		1B175E1F219FFCF900E7F469 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B175E1D219FFCF900E7F469 /* LaunchScreen.storyboard */; };
 		1B175E2A219FFCF900E7F469 /* ColorPickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B175E29219FFCF900E7F469 /* ColorPickerTests.swift */; };
 		1B175E35219FFCF900E7F469 /* ColorPickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B175E34219FFCF900E7F469 /* ColorPickerUITests.swift */; };
+		1B175E4321A01B5100E7F469 /* SaturationBrightnessPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B175E4221A01B5100E7F469 /* SaturationBrightnessPickerView.swift */; };
+		1B175E4521A01B5B00E7F469 /* HueSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B175E4421A01B5B00E7F469 /* HueSlider.swift */; };
+		1B175E4721A01B8B00E7F469 /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B175E4621A01B8B00E7F469 /* UIColor+Ex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		1B175E30219FFCF900E7F469 /* ColorPickerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColorPickerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B175E34219FFCF900E7F469 /* ColorPickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerUITests.swift; sourceTree = "<group>"; };
 		1B175E36219FFCF900E7F469 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B175E4221A01B5100E7F469 /* SaturationBrightnessPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaturationBrightnessPickerView.swift; sourceTree = "<group>"; };
+		1B175E4421A01B5B00E7F469 /* HueSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueSlider.swift; sourceTree = "<group>"; };
+		1B175E4621A01B8B00E7F469 /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,9 @@
 			children = (
 				1B175E14219FFCF600E7F469 /* AppDelegate.swift */,
 				1B175E16219FFCF600E7F469 /* ViewController.swift */,
+				1B175E4621A01B8B00E7F469 /* UIColor+Ex.swift */,
+				1B175E4221A01B5100E7F469 /* SaturationBrightnessPickerView.swift */,
+				1B175E4421A01B5B00E7F469 /* HueSlider.swift */,
 				1B175E18219FFCF600E7F469 /* Main.storyboard */,
 				1B175E1B219FFCF900E7F469 /* Assets.xcassets */,
 				1B175E1D219FFCF900E7F469 /* LaunchScreen.storyboard */,
@@ -256,8 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B175E4321A01B5100E7F469 /* SaturationBrightnessPickerView.swift in Sources */,
 				1B175E17219FFCF600E7F469 /* ViewController.swift in Sources */,
+				1B175E4721A01B8B00E7F469 /* UIColor+Ex.swift in Sources */,
 				1B175E15219FFCF600E7F469 /* AppDelegate.swift in Sources */,
+				1B175E4521A01B5B00E7F469 /* HueSlider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
