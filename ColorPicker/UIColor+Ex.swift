@@ -28,16 +28,49 @@ extension UIColor {
 
 extension UIColor {
     
-    typealias RGB = (r: CGFloat, g: CGFloat, b: CGFloat)
+    typealias RGBA = (r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat)
     
-    var rgb: RGB {
+    var rgba: RGBA {
         if let component = cgColor.components {
-            if component.count == 2 {
-                return (r: component[0], g: component[0], b: component[0])
-            }
-            return (r: component[0], g: component[1], b: component[2])
+             return (r: component[0],
+                     g: component[component.count == 2 ? 0 : 1],
+                     b: component[component.count == 2 ? 0 : 2],
+                     a: component[component.count == 2 ? 1 : 3])
         }
-        return (r: 0, g: 0, b: 0)
+        return (r: 0, g: 0, b: 0, a: 0)
+    }
+}
+
+extension UIColor {
+    
+    func hexString() -> String {
+        var r:CGFloat = 0
+        var g:CGFloat = 0
+        var b:CGFloat = 0
+        var a:CGFloat = 0
+        getRed(&r, green: &g, blue: &b, alpha: &a)
+        let rgb: Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
+        return String(format:"#%06X", rgb)
+    }
+
+    var saturation: CGFloat {
+        var saturation: CGFloat = 0
+        getHue(nil, saturation: &saturation, brightness: nil, alpha: nil)
+        return saturation
+    }
+    
+    var brightness: CGFloat {
+        var brightness: CGFloat = 0
+        getHue(nil, saturation: nil, brightness: &brightness, alpha: nil)
+        return brightness
+    }
+    
+    func updateHue(_ hue: CGFloat) -> UIColor {
+        var saturation: CGFloat = 0
+        var brightness: CGFloat = 0
+        var alpha: CGFloat = 0
+        getHue(nil, saturation: &saturation, brightness: &brightness, alpha: &alpha)
+        return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: alpha)
     }
 }
 

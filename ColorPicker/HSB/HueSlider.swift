@@ -20,31 +20,32 @@ final class HueSlider: UISlider {
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-    }
-    
-    func setup() {
         gradientLayer.frame = bounds
         layer.cornerRadius = bounds.height / 2
-        layer.masksToBounds = true
     }
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
         
-        let c1 = UIColor(red: 255/255, green: 0, blue: 0, alpha: 1)
-        let c2 = UIColor(red: 255/255, green: 255/255, blue: 0, alpha: 1)
-        let c3 = UIColor(red: 0, green: 255/255, blue: 0, alpha: 1)
-        let c4 = UIColor(red: 0, green: 255/255, blue: 255/255, alpha: 1)
-        let c5 = UIColor(red: 0, green: 0, blue: 255/255, alpha: 1)
-        let c6 = UIColor(red: 255/255, green: 0, blue: 255/255, alpha: 1)
-        let c7 = UIColor(red: 255/255, green: 0, blue: 0, alpha: 1)
-        
+        let red: [CGFloat] = [1, 1, 0, 0, 0, 1, 1]
+        let green: [CGFloat]  = [0, 1, 1, 1, 0, 0, 0]
+        let blue: [CGFloat]  = [0, 0, 0, 1, 1, 1, 0]
+
         gradientLayer.startPoint = .init(x: 0, y: 0.5)
         gradientLayer.endPoint = .init(x: 1, y: 0.5)
-        gradientLayer.colors = [c1, c2, c3, c4, c5, c6, c7].map { $0.cgColor }
+        gradientLayer.colors = (0..<7).map {
+            UIColor(red: red[$0],
+                    green: green[$0],
+                    blue: blue[$0],
+                    alpha: 1)
+                .cgColor
+        }
         layer.addSublayer(gradientLayer)
-        
         addTarget(self, action: #selector(sliderDidUpdate), for: .valueChanged)
+
+        maximumTrackTintColor = .clear
+        minimumTrackTintColor = .clear
+        layer.masksToBounds = true
     }
     
     required init?(coder aDecoder: NSCoder) {

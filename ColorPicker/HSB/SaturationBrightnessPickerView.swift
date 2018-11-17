@@ -9,30 +9,43 @@
 import UIKit
 
 protocol SaturationBrightnessPickerDelegate: class {
-    func didUpdateColor(_ color: UIColor)
+    func didPanPicker(_ saturation: CGFloat, _ brightness: CGFloat)
 }
 
 final class SaturationBrightnessPickerView: UIView {
     
+    weak var delegate: SaturationBrightnessPickerDelegate?
+    
+    private (set) lazy var circleView: UIView = {
+        let view = UIView()
+        view.layer.borderWidth = 2
+        view.bounds.size = CGSize(width: 20, height: 20)
+        view.layer.cornerRadius = 10
+        view.layer.borderColor = UIColor.white.cgColor
+        return view
+    }()
+    
     private var saturationGradient = CAGradientLayer()
     private var brightnessGradient = CAGradientLayer()
-    private var hue: CGFloat = 0
     
     func updateHue(_ hue: CGFloat) {
-        self.hue = hue
         let c1 = UIColor(hue: hue, saturation: 0, brightness: 1, alpha: 1)
         let c2 = UIColor(hue: hue, saturation: 1, brightness: 1, alpha: 1)
         saturationGradient.colors = [c1, c2].map { $0.cgColor }
+        circleView.backgroundColor = circleView.backgroundColor?.updateHue(hue)
     }
     
-    func setUp() {
+    override func draw(_ rect: CGRect) {
         saturationGradient.frame = bounds
         brightnessGradient.frame = bounds
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: .zero)
         
+        let c1 = UIColor(hue: 0, saturation: 0, brightness: 1, alpha: 1)
+        let c2 = UIColor(hue: 0, saturation: 1, brightness: 1, alpha: 1)
+        saturationGradient.colors = [c1, c2].map { $0.cgColor }
         saturationGradient.startPoint = .init(x: 0, y: 0.5)
         saturationGradient.endPoint = .init(x: 1, y: 0.5)
         layer.addSublayer(saturationGradient)
@@ -41,34 +54,30 @@ final class SaturationBrightnessPickerView: UIView {
         brightnessGradient.endPoint = .init(x: 0.5, y: 1)
         brightnessGradient.colors = [UIColor.clear, UIColor.black].map { $0.cgColor }
         layer.addSublayer(brightnessGradient)
+        
         addGestureRecognizer(panGesture)
+        addSubview(circleView)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     private lazy var panGesture = UIPanGestureRecognizer(target: self, action: #selector(actionPan))
-    
-    
     
     @objc private func actionPan(_ sender: UIPanGestureRecognizer) {
         
         let location = sender.location(in: self)
-        
+
+        if !bounds.contains(location) {
+            return
+        }
+
         let saturation = location.x / bounds.width
         let brightness = 1 - (location.y / bounds.height)
-        
-        
-        
-        let color = UIColor.init(hue: hue, saturation: saturation, brightness: brightness, alpha: 1)
-        
-        delegate?.didUpdateColor(color)
-        print(saturation, brightness)
-        
+
+        circleView.center = location
+        delegate?.didPanPicker(saturation, brightness)
     }
-    
-    weak var delegate: SaturationBrightnessPickerDelegate?
 }
 

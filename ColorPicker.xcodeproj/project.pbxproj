@@ -17,6 +17,11 @@
 		1B175E4321A01B5100E7F469 /* SaturationBrightnessPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B175E4221A01B5100E7F469 /* SaturationBrightnessPickerView.swift */; };
 		1B175E4521A01B5B00E7F469 /* HueSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B175E4421A01B5B00E7F469 /* HueSlider.swift */; };
 		1B175E4721A01B8B00E7F469 /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B175E4621A01B8B00E7F469 /* UIColor+Ex.swift */; };
+		1B175E4A21A04AA200E7F469 /* HSBColorPickerExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B175E4921A04AA200E7F469 /* HSBColorPickerExample.swift */; };
+		1B175E4C21A04ACB00E7F469 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B175E4B21A04ACB00E7F469 /* BaseView.swift */; };
+		1B175E4E21A0634900E7F469 /* HSBColorPickeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B175E4D21A0634900E7F469 /* HSBColorPickeView.swift */; };
+		1B175E5221A0683600E7F469 /* ColorPickTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B175E5121A0683600E7F469 /* ColorPickTableView.swift */; };
+		1B175E5621A0691500E7F469 /* ColorPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B175E5521A0691500E7F469 /* ColorPickerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,11 @@
 		1B175E4221A01B5100E7F469 /* SaturationBrightnessPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaturationBrightnessPickerView.swift; sourceTree = "<group>"; };
 		1B175E4421A01B5B00E7F469 /* HueSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueSlider.swift; sourceTree = "<group>"; };
 		1B175E4621A01B8B00E7F469 /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
+		1B175E4921A04AA200E7F469 /* HSBColorPickerExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSBColorPickerExample.swift; sourceTree = "<group>"; };
+		1B175E4B21A04ACB00E7F469 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		1B175E4D21A0634900E7F469 /* HSBColorPickeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSBColorPickeView.swift; sourceTree = "<group>"; };
+		1B175E5121A0683600E7F469 /* ColorPickTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickTableView.swift; sourceTree = "<group>"; };
+		1B175E5521A0691500E7F469 /* ColorPickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,15 +113,12 @@
 		1B175E13219FFCF600E7F469 /* ColorPicker */ = {
 			isa = PBXGroup;
 			children = (
-				1B175E14219FFCF600E7F469 /* AppDelegate.swift */,
-				1B175E16219FFCF600E7F469 /* ViewController.swift */,
+				1B175E5321A0685000E7F469 /* Table */,
+				1B175E4821A0220000E7F469 /* HSB */,
+				1B175E5721A0696800E7F469 /* Support */,
 				1B175E4621A01B8B00E7F469 /* UIColor+Ex.swift */,
-				1B175E4221A01B5100E7F469 /* SaturationBrightnessPickerView.swift */,
-				1B175E4421A01B5B00E7F469 /* HueSlider.swift */,
-				1B175E18219FFCF600E7F469 /* Main.storyboard */,
-				1B175E1B219FFCF900E7F469 /* Assets.xcassets */,
-				1B175E1D219FFCF900E7F469 /* LaunchScreen.storyboard */,
-				1B175E20219FFCF900E7F469 /* Info.plist */,
+				1B175E4B21A04ACB00E7F469 /* BaseView.swift */,
+				1B175E5521A0691500E7F469 /* ColorPickerDelegate.swift */,
 			);
 			path = ColorPicker;
 			sourceTree = "<group>";
@@ -132,6 +139,38 @@
 				1B175E36219FFCF900E7F469 /* Info.plist */,
 			);
 			path = ColorPickerUITests;
+			sourceTree = "<group>";
+		};
+		1B175E4821A0220000E7F469 /* HSB */ = {
+			isa = PBXGroup;
+			children = (
+				1B175E4921A04AA200E7F469 /* HSBColorPickerExample.swift */,
+				1B175E4221A01B5100E7F469 /* SaturationBrightnessPickerView.swift */,
+				1B175E4421A01B5B00E7F469 /* HueSlider.swift */,
+				1B175E4D21A0634900E7F469 /* HSBColorPickeView.swift */,
+			);
+			path = HSB;
+			sourceTree = "<group>";
+		};
+		1B175E5321A0685000E7F469 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				1B175E5121A0683600E7F469 /* ColorPickTableView.swift */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
+		1B175E5721A0696800E7F469 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				1B175E14219FFCF600E7F469 /* AppDelegate.swift */,
+				1B175E16219FFCF600E7F469 /* ViewController.swift */,
+				1B175E18219FFCF600E7F469 /* Main.storyboard */,
+				1B175E1B219FFCF900E7F469 /* Assets.xcassets */,
+				1B175E1D219FFCF900E7F469 /* LaunchScreen.storyboard */,
+				1B175E20219FFCF900E7F469 /* Info.plist */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,11 +304,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B175E5621A0691500E7F469 /* ColorPickerDelegate.swift in Sources */,
 				1B175E4321A01B5100E7F469 /* SaturationBrightnessPickerView.swift in Sources */,
 				1B175E17219FFCF600E7F469 /* ViewController.swift in Sources */,
+				1B175E5221A0683600E7F469 /* ColorPickTableView.swift in Sources */,
 				1B175E4721A01B8B00E7F469 /* UIColor+Ex.swift in Sources */,
 				1B175E15219FFCF600E7F469 /* AppDelegate.swift in Sources */,
+				1B175E4C21A04ACB00E7F469 /* BaseView.swift in Sources */,
+				1B175E4E21A0634900E7F469 /* HSBColorPickeView.swift in Sources */,
 				1B175E4521A01B5B00E7F469 /* HueSlider.swift in Sources */,
+				1B175E4A21A04AA200E7F469 /* HSBColorPickerExample.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,7 +489,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ColorPicker/Info.plist;
+				DEVELOPMENT_TEAM = 84SRQMJE42;
+				INFOPLIST_FILE = ColorPicker/Support/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -462,7 +508,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ColorPicker/Info.plist;
+				DEVELOPMENT_TEAM = 84SRQMJE42;
+				INFOPLIST_FILE = ColorPicker/Support/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
