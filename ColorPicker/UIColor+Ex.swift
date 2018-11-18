@@ -39,9 +39,34 @@ extension UIColor {
         }
         return (r: 0, g: 0, b: 0, a: 0)
     }
+    
+    typealias RGB = (r: CGFloat, g: CGFloat, b: CGFloat)
+    
+    var rgb: RGB {
+        if let component = cgColor.components {
+            return (r: component[0],
+                    g: component[component.count == 2 ? 0 : 1],
+                    b: component[component.count == 2 ? 0 : 2])
+        }
+        return (r: 0, g: 0, b: 0)
+    }
+    
+    convenience init(rgb: RGB) {
+        self.init(red: rgb.r, green: rgb.g, blue: rgb.b, alpha: 1)
+    }
 }
 
 extension UIColor {
+    
+    
+    func rgbString() -> String {
+        var r:CGFloat = 0
+        var g:CGFloat = 0
+        var b:CGFloat = 0
+        var a:CGFloat = 0
+        getRed(&r, green: &g, blue: &b, alpha: &a)
+        return "R: \( (Int)(r*255))  G: \( (Int)(g*255))  B \( (Int)(b*255))"
+    }
     
     func hexString() -> String {
         var r:CGFloat = 0

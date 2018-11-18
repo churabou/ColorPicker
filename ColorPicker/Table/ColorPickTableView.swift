@@ -43,9 +43,6 @@ final class ColorPickTableView: UIViewController {
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         view.addSubview(tableView)
-
-
-
     }
 
     @objc private func actionSlider(_ sender: UISlider) {
