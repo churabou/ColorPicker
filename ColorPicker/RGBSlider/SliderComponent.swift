@@ -39,8 +39,6 @@ final class SliderComponent: BaseView {
     }
     
     override func initializeView() {
-        
-        backgroundColor = .white
         slider.minimumTrackTintColor = .clear
         slider.maximumTrackTintColor = .clear
         slider.addTarget(self, action: #selector(actionSlider), for: .valueChanged)
@@ -56,7 +54,10 @@ final class SliderComponent: BaseView {
     
     // input from rgbview
     func updateSliderValue(to value: Float) {
-        slider.setValue(value, animated: true)
+
+        UIView.animate(withDuration: 0.2) {
+            self.slider.setValue(value, animated: true)
+        }
     }
 }
 

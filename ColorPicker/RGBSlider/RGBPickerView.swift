@@ -62,7 +62,7 @@ final class RGBPickerView: BaseView {
             ])
         
         NSLayoutConstraint.activate([
-            slider.widthAnchor.constraint(equalToConstant: 300),
+            slider.rightAnchor.constraint(equalTo: doneButton.leftAnchor, constant: -20),
             slider.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
             slider.heightAnchor.constraint(equalToConstant: 150),
             slider.topAnchor.constraint(equalTo: scroll.bottomAnchor)

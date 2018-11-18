@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ColorPickTableView: UIViewController {
+final class TablePickerExample: UIViewController {
 
     private var saturationSlider = UISlider()
     private var brightnessSlider = UISlider()
@@ -28,7 +28,6 @@ final class ColorPickTableView: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
 
         saturationSlider.frame = .init(x: 20, y: 50, width: view.bounds.width/2-40, height: 30)
         saturationSlider.addTarget(self, action: #selector(actionSlider), for: .valueChanged)
@@ -55,15 +54,14 @@ final class ColorPickTableView: UIViewController {
     }
 }
 
-extension ColorPickTableView: UITableViewDelegate {
+extension TablePickerExample: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         view.backgroundColor = UIColor(hue: CGFloat(indexPath.row) / 120, saturation: saturation, brightness: brightness, alpha: 1)
     }
-
 }
 
-extension ColorPickTableView: UITableViewDataSource {
+extension TablePickerExample: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 120
@@ -73,7 +71,7 @@ extension ColorPickTableView: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let color = UIColor(hue: CGFloat(indexPath.row) / 120, saturation: saturation, brightness: brightness, alpha: 1)
         cell.contentView.backgroundColor = color
-        cell.textLabel?.text = color.hexString().uppercased()
+        cell.textLabel?.text = color.hexString()
         cell.textLabel?.textColor = .black
         cell.selectionStyle = .none
         return cell

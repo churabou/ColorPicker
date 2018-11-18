@@ -57,17 +57,7 @@ extension UIColor {
 }
 
 extension UIColor {
-    
-    
-    func rgbString() -> String {
-        var r:CGFloat = 0
-        var g:CGFloat = 0
-        var b:CGFloat = 0
-        var a:CGFloat = 0
-        getRed(&r, green: &g, blue: &b, alpha: &a)
-        return "R: \( (Int)(r*255))  G: \( (Int)(g*255))  B \( (Int)(b*255))"
-    }
-    
+
     func hexString() -> String {
         var r:CGFloat = 0
         var g:CGFloat = 0
@@ -76,26 +66,6 @@ extension UIColor {
         getRed(&r, green: &g, blue: &b, alpha: &a)
         let rgb: Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
         return String(format:"#%06X", rgb)
-    }
-
-    var saturation: CGFloat {
-        var saturation: CGFloat = 0
-        getHue(nil, saturation: &saturation, brightness: nil, alpha: nil)
-        return saturation
-    }
-    
-    var brightness: CGFloat {
-        var brightness: CGFloat = 0
-        getHue(nil, saturation: nil, brightness: &brightness, alpha: nil)
-        return brightness
-    }
-    
-    func updateHue(_ hue: CGFloat) -> UIColor {
-        var saturation: CGFloat = 0
-        var brightness: CGFloat = 0
-        var alpha: CGFloat = 0
-        getHue(nil, saturation: &saturation, brightness: &brightness, alpha: &alpha)
-        return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: alpha)
     }
 }
 

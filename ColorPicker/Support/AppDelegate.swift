@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         window = UIWindow()
-        window?.rootViewController = RGBPickerExample()
+        window?.rootViewController = HSBColorPickerExample()
         window?.makeKeyAndVisible()
         return true
     }

@@ -20,7 +20,7 @@
 		1B175E4A21A04AA200E7F469 /* HSBColorPickerExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B175E4921A04AA200E7F469 /* HSBColorPickerExample.swift */; };
 		1B175E4C21A04ACB00E7F469 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B175E4B21A04ACB00E7F469 /* BaseView.swift */; };
 		1B175E4E21A0634900E7F469 /* HSBColorPickeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B175E4D21A0634900E7F469 /* HSBColorPickeView.swift */; };
-		1B175E5221A0683600E7F469 /* ColorPickTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B175E5121A0683600E7F469 /* ColorPickTableView.swift */; };
+		1B175E5221A0683600E7F469 /* TablePickerExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B175E5121A0683600E7F469 /* TablePickerExample.swift */; };
 		1B175E5621A0691500E7F469 /* ColorPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B175E5521A0691500E7F469 /* ColorPickerDelegate.swift */; };
 		1B175E5921A0F33800E7F469 /* ColorScrollPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B175E5821A0F33800E7F469 /* ColorScrollPicker.swift */; };
 		1B175E5B21A0F45200E7F469 /* RGBPickerExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B175E5A21A0F45200E7F469 /* RGBPickerExample.swift */; };
@@ -66,7 +66,7 @@
 		1B175E4921A04AA200E7F469 /* HSBColorPickerExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSBColorPickerExample.swift; sourceTree = "<group>"; };
 		1B175E4B21A04ACB00E7F469 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		1B175E4D21A0634900E7F469 /* HSBColorPickeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSBColorPickeView.swift; sourceTree = "<group>"; };
-		1B175E5121A0683600E7F469 /* ColorPickTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickTableView.swift; sourceTree = "<group>"; };
+		1B175E5121A0683600E7F469 /* TablePickerExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablePickerExample.swift; sourceTree = "<group>"; };
 		1B175E5521A0691500E7F469 /* ColorPickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerDelegate.swift; sourceTree = "<group>"; };
 		1B175E5821A0F33800E7F469 /* ColorScrollPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScrollPicker.swift; sourceTree = "<group>"; };
 		1B175E5A21A0F45200E7F469 /* RGBPickerExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBPickerExample.swift; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 		1B175E13219FFCF600E7F469 /* ColorPicker */ = {
 			isa = PBXGroup;
 			children = (
-				1B175E5321A0685000E7F469 /* Table */,
+				C908452D21A1263E00D708AD /* Example */,
 				1B175E6021A1052E00E7F469 /* RGBSlider */,
 				1B175E4821A0220000E7F469 /* HSB */,
 				1B175E5721A0696800E7F469 /* Support */,
@@ -155,20 +155,11 @@
 		1B175E4821A0220000E7F469 /* HSB */ = {
 			isa = PBXGroup;
 			children = (
-				1B175E4921A04AA200E7F469 /* HSBColorPickerExample.swift */,
 				1B175E4221A01B5100E7F469 /* SaturationBrightnessPickerView.swift */,
 				1B175E4421A01B5B00E7F469 /* HueSlider.swift */,
 				1B175E4D21A0634900E7F469 /* HSBColorPickeView.swift */,
 			);
 			path = HSB;
-			sourceTree = "<group>";
-		};
-		1B175E5321A0685000E7F469 /* Table */ = {
-			isa = PBXGroup;
-			children = (
-				1B175E5121A0683600E7F469 /* ColorPickTableView.swift */,
-			);
-			path = Table;
 			sourceTree = "<group>";
 		};
 		1B175E5721A0696800E7F469 /* Support */ = {
@@ -187,13 +178,22 @@
 		1B175E6021A1052E00E7F469 /* RGBSlider */ = {
 			isa = PBXGroup;
 			children = (
-				1B175E5A21A0F45200E7F469 /* RGBPickerExample.swift */,
 				1B175E5821A0F33800E7F469 /* ColorScrollPicker.swift */,
 				1B175E5C21A0F59200E7F469 /* SliderComponent.swift */,
 				1B175E5E21A0F6E800E7F469 /* RGBSliderView.swift */,
 				1B175E6321A1094A00E7F469 /* RGBPickerView.swift */,
 			);
 			path = RGBSlider;
+			sourceTree = "<group>";
+		};
+		C908452D21A1263E00D708AD /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				1B175E4921A04AA200E7F469 /* HSBColorPickerExample.swift */,
+				1B175E5A21A0F45200E7F469 /* RGBPickerExample.swift */,
+				1B175E5121A0683600E7F469 /* TablePickerExample.swift */,
+			);
+			path = Example;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,7 +331,7 @@
 				1B175E5921A0F33800E7F469 /* ColorScrollPicker.swift in Sources */,
 				1B175E4321A01B5100E7F469 /* SaturationBrightnessPickerView.swift in Sources */,
 				1B175E17219FFCF600E7F469 /* ViewController.swift in Sources */,
-				1B175E5221A0683600E7F469 /* ColorPickTableView.swift in Sources */,
+				1B175E5221A0683600E7F469 /* TablePickerExample.swift in Sources */,
 				1B175E6421A1094A00E7F469 /* RGBPickerView.swift in Sources */,
 				1B175E5D21A0F59200E7F469 /* SliderComponent.swift in Sources */,
 				1B175E4721A01B8B00E7F469 /* UIColor+Ex.swift in Sources */,

@@ -17,12 +17,13 @@ final class SaturationBrightnessPickerView: UIView {
     weak var delegate: SaturationBrightnessPickerDelegate?
     
     private (set) lazy var circleView: UIView = {
-        let view = UIView()
-        view.layer.borderWidth = 2
-        view.bounds.size = CGSize(width: 20, height: 20)
-        view.layer.cornerRadius = 10
-        view.layer.borderColor = UIColor.white.cgColor
-        return view
+        let v = UIView()
+        v.layer.borderWidth = 2
+        v.bounds.size = CGSize(width: 20, height: 20)
+        v.layer.cornerRadius = 10
+        v.layer.borderColor = UIColor.white.cgColor
+        v.backgroundColor = .clear
+        return v
     }()
     
     private var saturationGradient = CAGradientLayer()
@@ -32,7 +33,6 @@ final class SaturationBrightnessPickerView: UIView {
         let c1 = UIColor(hue: hue, saturation: 0, brightness: 1, alpha: 1)
         let c2 = UIColor(hue: hue, saturation: 1, brightness: 1, alpha: 1)
         saturationGradient.colors = [c1, c2].map { $0.cgColor }
-        circleView.backgroundColor = circleView.backgroundColor?.updateHue(hue)
     }
     
     override func draw(_ rect: CGRect) {

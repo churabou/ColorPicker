@@ -41,7 +41,6 @@ final class HSBColorPickerExample: UIViewController {
         initializeConstraints()
     }
     
-    
     func initializeConstraints() {
         
         NSLayoutConstraint.activate([
@@ -59,9 +58,9 @@ final class HSBColorPickerExample: UIViewController {
             ])
         
         NSLayoutConstraint.activate([
-            picker.heightAnchor.constraint(equalToConstant: 350),
-            picker.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
-            picker.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            picker.heightAnchor.constraint(equalToConstant: 300),
+            picker.leftAnchor.constraint(equalTo: view.leftAnchor),
+            picker.rightAnchor.constraint(equalTo: view.rightAnchor),
             picker.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10)
             ])
     }
