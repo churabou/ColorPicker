@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B13676721E87B3C00745190 /* HSVGridColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B13676621E87B3C00745190 /* HSVGridColorPicker.swift */; };
 		1B175E15219FFCF600E7F469 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B175E14219FFCF600E7F469 /* AppDelegate.swift */; };
 		1B175E17219FFCF600E7F469 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B175E16219FFCF600E7F469 /* ViewController.swift */; };
 		1B175E1A219FFCF600E7F469 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B175E18219FFCF600E7F469 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B13676621E87B3C00745190 /* HSVGridColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSVGridColorPicker.swift; sourceTree = "<group>"; };
 		1B175E11219FFCF600E7F469 /* ColorPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B175E14219FFCF600E7F469 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B175E16219FFCF600E7F469 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				1B175E4221A01B5100E7F469 /* SaturationBrightnessPickerView.swift */,
 				1B175E4421A01B5B00E7F469 /* HueSlider.swift */,
 				1B175E4D21A0634900E7F469 /* HSBColorPickeView.swift */,
+				1B13676621E87B3C00745190 /* HSVGridColorPicker.swift */,
 			);
 			path = HSB;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				1B175E5221A0683600E7F469 /* TablePickerExample.swift in Sources */,
 				1B175E6421A1094A00E7F469 /* RGBPickerView.swift in Sources */,
 				1B175E5D21A0F59200E7F469 /* SliderComponent.swift in Sources */,
+				1B13676721E87B3C00745190 /* HSVGridColorPicker.swift in Sources */,
 				1B175E4721A01B8B00E7F469 /* UIColor+Ex.swift in Sources */,
 				1B175E15219FFCF600E7F469 /* AppDelegate.swift in Sources */,
 				1B175E4C21A04ACB00E7F469 /* BaseView.swift in Sources */,
