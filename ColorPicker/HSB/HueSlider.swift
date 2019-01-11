@@ -21,7 +21,7 @@ final class HueSlider: UISlider {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         gradientLayer.frame = bounds
-        layer.cornerRadius = bounds.height / 2
+        gradientLayer.cornerRadius = bounds.height / 2
     }
     
     override init(frame: CGRect) {
@@ -45,7 +45,6 @@ final class HueSlider: UISlider {
 
         maximumTrackTintColor = .clear
         minimumTrackTintColor = .clear
-        layer.masksToBounds = true
     }
     
     required init?(coder aDecoder: NSCoder) {
